@@ -1,0 +1,23 @@
+{
+  "name": "route-tester",
+  "version": "1.0.0",
+  "description": "An application to create a custom route tester.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabralwilliams/route-tester.git"
+  },
+  "author": "Cabral Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cabralwilliams/route-tester/issues"
+  },
+  "homepage": "https://github.com/cabralwilliams/route-tester#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.2.0"
+  }
+}
