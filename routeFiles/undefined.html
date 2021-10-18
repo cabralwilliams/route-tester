@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>route1Get - GET Route</title>
+    </head>
+    <body>
+        <h1>GET - route1Get</h1>
+        <p>To test whether your route is working properly, include the required properties or the desired search parameters below.</p>
+        <form action='../api/sampleData' method='GET' data-inputpairs='0' id='pageForm'>
+            <div><button id='addButton'>Add</button> | <button id='removeButton'>Remove</button> | <button id='submit' type='submit'>Submit</button></div>
+        </form>
+        <script>
+        const addButton = document.querySelector("#addButton");
+        const removeButton = document.querySelector("#removeButton");
+        const pageForm = document.querySelector("#pageForm");
+
+        addButton.addEventListener("click", () => {
+            let elCount = parseInt(pageForm.dataset.inputpairs);
+            let divEl = document.createElement("div");
+            divEl.id = "div" + elCount;
+            let spanEl1 = document.createElement("span");
+            spanEl1.textContent = "Parameter/Property: ";
+            let selectEl1 = document.createElement("select");
+            selectEl1.id = "select" + elCount;
+            selectEl1.name = "select" + elCount;
+            let nextOption;
+            nextOption = document.createElement("option");
+        nextOption.value = "extinctStatus";
+        nextOption.textContent = "extinctStatus";
+        selectEl1.appendChild(nextOption);
+        
+            let labelEl = document.createElement("label");
+            labelEl.textContent = " | Value: ";
+            labelEl.for = "input" + elCount;
+            let inputEl = document.createElement("input");
+            inputEl.type = "text";
+            inputEl.id = "input" + elCount;
+            inputEl.name = "input" + elCount;
+            divEl.append(spanEl1,selectEl1,labelEl1,inputEl);
+            pageForm.setAttribute("data-inputpairs", String(elCount + 1));
+            pageForm.appendChild(divEl);
+        })
+    </script>
+    </body>
+    </html>
