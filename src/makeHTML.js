@@ -108,23 +108,26 @@ const pageRender = (pageData) => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${pageData.metaData.pageName} Route</title>
+        <link rel="stylesheet" href="../src/style.css" />
     </head>
     <body>
-        <h1>${pageData.metaData.pageName}</h1>
-        <p>To test whether your route is working properly, include the required properties or the desired search parameters below.</p>
-        <div data-inputpairs='0' id='formSelector'>
-            <div><button id='addButton'>Add</button> | <button id='removeButton'>Remove</button></div>
-            <div>
-                <select id='methodSelect'>
-                    <option value='GET_Query'>GET - Query</option>
-                    <option value='GET_Param'>GET - Param</option>
-                    <option value='POST'>POST</option>
-                </select> | 
-                <button id='confirmRoute'>Confirm</button>
+        <div class='main-div'>
+            <h1>${pageData.metaData.pageName}</h1>
+            <p>To test whether your route is working properly, include the required properties or the desired search parameters below.</p>
+            <div data-inputpairs='0' id='formSelector'>
+                <div><button id='addButton'>Add</button> | <button id='removeButton'>Remove</button></div>
+                <div>
+                    <select id='methodSelect'>
+                        <option value='GET_Query'>GET - Query</option>
+                        <option value='GET_Param'>GET - Param</option>
+                        <option value='POST'>POST</option>
+                    </select> | 
+                    <button id='confirmRoute'>Confirm</button>
+                </div>
             </div>
-        </div>
-        <form id="formToSubmit" action='../${pageData.metaData.routeName}'>
+            <form id="formToSubmit" action='../${pageData.metaData.routeName}'>
         </form>
+        </div>
         ${pageScript}
     </body>
     </html>`;
